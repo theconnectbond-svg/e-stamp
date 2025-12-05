@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Stamp Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginPage">
+    <h2>Login</h2>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="adminPage" style="display:none;">
+    <h2>JayJay E-Stamp</h2>
+
+    <div class="add-box">
+        <input type="text" id="customerName" placeholder="Name">
+        <button onclick="addCustomer()">Add</button>
+        <button onclick="exportExcel()">Export Excel</button>
+    </div>
+
+    <h3>List</h3>
+    <div id="customerList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

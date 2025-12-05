@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Stamp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="profileBox">
+    <h2 id="custName"></h2>
+    <p id="stampCount"></p>
+    <p id="rewardCount"></p>
+
+    <h3>QR Code</h3>
+    <div id="qrcode"></div>
+
+    <button onclick="back()">กลับ</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+    const customers = JSON.parse(localStorage.getItem("customers")) || [];
+
+    const cust = customers[id];
+
+    document.getElementById("custName").innerText = cust.name;
+    document.getElementById("stampCount").innerText = "Stamp: " + cust.stamp;
+    document.getElementById("rewardCount").innerText = "Reward: " + cust.reward;
+
+    new QRCode(document.getElementById("qrcode"), {
+        text: window.location.href,
+        width: 200,
+        height: 200
+    });
+
+    function back() {
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
