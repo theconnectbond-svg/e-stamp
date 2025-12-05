@@ -40,6 +40,15 @@ button {
     border: 1px solid #ddd;
 }
 
+.customer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;  /* <<< ทำให้มือถือไม่ล้น */
+    box-sizing: border-box;
+}
 .customer-item span {
     white-space: nowrap;
 }
@@ -47,6 +56,12 @@ button {
 .btn-group {
     display: flex;
     gap: 8px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;  /* <<< สำคัญมากสำหรับจอเล็ก */
 }
 
 .btn-group button {
